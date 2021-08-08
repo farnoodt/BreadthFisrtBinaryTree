@@ -15,7 +15,8 @@ namespace BreadthFisrtBinaryTree
 
             BreadthFirstTree BFS = new BreadthFirstTree();
             BFS.LevelOrderTree(tree);
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("PreOrder");
+            BFS.PreOrderTree(tree);
             Console.ReadLine();
         }
     }

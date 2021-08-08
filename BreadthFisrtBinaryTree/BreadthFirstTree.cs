@@ -19,14 +19,36 @@ namespace BreadthFisrtBinaryTree
             while (q.Count != 0)
             {
                 
-                Node temp = q.Dequeue();
-                Console.Write(temp.data + " , ");
-                if (temp.left != null)
-                    q.Enqueue(temp.left);
+                root = q.Dequeue();
+                Console.Write(root.data + " , ");
+                if (root.left != null)
+                    q.Enqueue(root.left);
 
-                if (temp.right != null)
-                    q.Enqueue(temp.right);
+                if (root.right != null)
+                    q.Enqueue(root.right);
                 
+            }
+        }
+
+        public void PreOrderTree(Node root)
+        {
+            Stack<Node> s = new Stack<Node>();
+            if (root == null)
+                return;
+
+            s.Push(root);
+
+            while (s.Count != 0)
+            {
+
+                root = s.Pop();
+                Console.Write(root.data + " , ");
+                if (root.right != null)
+                    s.Push(root.right);
+
+                if (root.left != null)
+                    s.Push(root.left);
+
             }
         }
     }
